@@ -1,3 +1,3 @@
-[submodule "prototypes/resources/phonegap"]
-	path = prototypes/resources/phonegap
+[submodule "prototypes/src/phonegap"]
+	path = prototypes/src/phonegap
 	url = git://github.com/phonegap/phonegap.git
