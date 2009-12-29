@@ -1,5 +1,3 @@
-
-
 HumanApi Prototypes
 ===================
 
@@ -42,7 +40,7 @@ this, create a branch and only edit code based in the prototypes/src directory.
 
 prototypes/dev is primarily for testing!
 
-Prototype setup
+Setup
 ~~~~~~~~~~~~~~~
 
 	$ cd /prototypes/build
