@@ -57,7 +57,8 @@ If you want to create a new fresh project run following command first
 
 	$ make clean
 
-NOTE: this will delete all prior changes you might have made. As stated before,
+NOTE: this will delete all prior changes you might have made in all files and
+folders except the www folder which is symlinked. As stated before,
 don't edit code in the dev directory but only in the src directory
 
 Now you can open the project in the editing environment for the device (e.g.
