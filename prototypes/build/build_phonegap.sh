@@ -33,6 +33,9 @@ done
 rm -Rf "$DEV_DIR/$NAME/iphone/www/"
 cp -R "$SOURCE_DIR/$NAME/www/" $DEV_DIR/$NAME/iphone/www
 
+# Copy plugins
+cp -R "$SOURCE_DIR/phonegap_plugins/" $DEV_DIR/$NAME/iphone/Plugins
+
 # Add phonegap specific icons
 cp $SOURCE_DIR/$NAME/icons/Default.png $DEV_DIR/$NAME/iphone
 cp $SOURCE_DIR/$NAME/icons/icon.png $DEV_DIR/$NAME/iphone
