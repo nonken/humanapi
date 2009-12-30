@@ -29,9 +29,9 @@ do
 	done
 done
 
-# Move www contents
+# Symlink www contents
 rm -Rf "$DEV_DIR/$NAME/iphone/www/"
-cp -R "$SOURCE_DIR/$NAME/www/" $DEV_DIR/$NAME/iphone/www
+ln -s "$SOURCE_DIR/$NAME/www/" $DEV_DIR/$NAME/iphone/www
 
 # Copy plugins
 cp -R "$SOURCE_DIR/phonegap_plugins/" $DEV_DIR/$NAME/iphone/Plugins

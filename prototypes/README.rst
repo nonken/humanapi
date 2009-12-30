@@ -34,6 +34,7 @@ Basics
 All source files are located in the prototypes/src folder.
 To test the prototype on a phone or simulator you need to create a dev project
 using make.
+
 Be aware that once you run make clean all projects in the prototypes/dev
 folder get removed and eventual changes to the app code get lost. To prevent
 this, create a branch and only edit code based in the prototypes/src directory.
@@ -41,7 +42,7 @@ this, create a branch and only edit code based in the prototypes/src directory.
 prototypes/dev is primarily for testing!
 
 Setup
-~~~~~~~~~~~~~~~
+~~~~~
 
 	$ cd /prototypes/build
 
