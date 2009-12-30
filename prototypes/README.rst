@@ -70,3 +70,8 @@ Hardware setup
 
 Specific details for each applications can be found in the README of the
 application.
+
+More info
+---------
+
+Check humanapi.org for tutorials and more information.
