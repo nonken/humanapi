@@ -22,11 +22,12 @@ html, body {
 }
 
 .body {
-	margin: 61px 3px 3px 3px;
+	margin: 0px 3px 3px 3px;
+	padding-top: 61px;
 }
 
 	.body.list {
-		margin: 56px 0 0 0;
+		padding-top: 56px;
 	}
 
 /* Container */
@@ -84,14 +85,6 @@ html, body {
 	background-repeat: no-repeat, repeat-x;
 	background-color: #015fe7;
 	color: white;
-}
-
-.heartRate {
-	font-size: 48px;
-	border: 1px solid #ccc;
-	-webkit-border-radius: 3px;
-	background: #cfe9c9;
-	margin-bottom: 20px;
 }
 
 /* Butons */
@@ -160,6 +153,15 @@ html, body {
 	background: none;
 }
 
+/* Misc */
+.heartRate {
+	font-size: 40px;
+	border: 1px solid #ccc;
+	-webkit-border-radius: 3px;
+	background: #cfe9c9;
+	margin-bottom: 20px;
+}
+
 .connectionInfo {
 	margin-top: 20px;
 }
@@ -220,7 +222,7 @@ h2 {
 }
 
 p {
-	margin: 3px 0;
+	margin: 5px 0;
 }
 
 label {

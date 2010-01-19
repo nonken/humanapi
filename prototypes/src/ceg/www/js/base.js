@@ -29,7 +29,7 @@ humanapi.ceg = function(){
 		nlViewDetails: dojo.query(".view.details"),
 
 		// Common
-		nlHeartRate: dojo.query(".rate"),
+		nlHeartRate: dojo.query(".heartRate"),
 		nlDeviceInfo: dojo.query("img.connectionInfo"),
 		nlSessionTime: dojo.query("span.time"),
 
@@ -329,16 +329,19 @@ humanapi.ceg = function(){
 	};
 
 	this.renderDetails = function(id){
+		// reset
+		this.nlContainerMap.addClass("displayNone");
+
 		// draw route
 		var callb = function(data){
 			this.nlTrainingDate.attr("innerHTML", dojo.date.locale.format(new Date(data.start), {formatLength:'short'}));
 			this.nlTrainingLength.attr("innerHTML", dojo.date.locale.format(new Date(data.stop), {timePattern:'HH:mm:ss', selector:'time'}));
-			this.nlTrainingMin.attr("innerHTML", data.minRate);
-			this.nlTrainingMax.attr("innerHTML", data.maxRate);
-			this.nlTrainingAvg.attr("innerHTML", data.avgRate);
+			this.nlTrainingMin.attr("innerHTML", data.minRate ? data.minRate : "Not available");
+			this.nlTrainingMax.attr("innerHTML", data.maxRate ? data.maxRate : "Not available");
+			this.nlTrainingAvg.attr("innerHTML", data.avgRate ? data.avgRate : "Not available");
 
 			// Handle map if data are available
-			var advData = dojo.fromJson(data.adv);
+			var advData = data.adv ? dojo.fromJson(data.adv) : [];
 			if (advData.length){
 				this.nlContainerMap.removeClass("displayNone");
 
@@ -353,22 +356,20 @@ humanapi.ceg = function(){
 				avgLat /= advData.length;
 				avgLng /= advData.length;
 
-				if (!this.mapInstance){
-					var myOptions = {
-						zoom: 16,
-						mapTypeId: google.maps.MapTypeId.ROADMAP,
-						scaleControl: true
-					};
-					this.mapInstance = new google.maps.Map(this.map, myOptions);
+				if (this.mapInstance){
+					dojo.destroy(this.mapInstance);
 				}
+
+				var myOptions = {
+					zoom: 16,
+					mapTypeId: google.maps.MapTypeId.ROADMAP,
+					scaleControl: true
+				};
+				dojo.destroy(this.map.firstChild);
+				this.mapInstance = new google.maps.Map(dojo.create("div", {style:{ width: "100%", height: "100%"}}, this.map, "first"), myOptions);
 
 				var latlng = new google.maps.LatLng(avgLat, avgLng);
 				this.mapInstance.setCenter(latlng);
-
-				if (this.trackPath){
-					this.trackPath.setMap(null);
-					delete this.trackPath;
-				}
 
 				this.trackPath = new google.maps.Polyline({
 					path: trackCoords,
