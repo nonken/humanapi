@@ -35,14 +35,14 @@
  *  Created by Matthias Ringwald on 7/1/09.
  *
  *  BTstack client API
- *  
+ *
  */
 
 #pragma once
 
-#include </Users/nikolaionken/dev/sandbox/btstack/include/btstack/hci_cmds.h>
-#include </Users/nikolaionken/dev/sandbox/btstack/include/btstack/run_loop.h>
-#include </Users/nikolaionken/dev/sandbox/btstack/include/btstack/utils.h>
+#include "hci_cmds.h"
+#include "run_loop.h"
+#include "utils.h"
 
 #include <stdint.h>
 

@@ -10,6 +10,13 @@
 #import "PhoneGapCommand.h"
 #import "BluetoothDelegate.h"
 
+#import "btstack/btstack.h"
+
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 @interface Bluetooth : PhoneGapCommand {
 
 }
