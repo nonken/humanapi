@@ -14,9 +14,9 @@ fridgeaid:
 	# Creating new PhoneGap project in dev/fridgeaid
 	sh build_phonegap.sh fridgeaid
 
-ceg:
+ecg:
 	# Creating new PhoneGap project in dev/ceg
-	sh build_phonegap.sh ceg
+	sh build_phonegap.sh ecg
 
 speedometer:
 	# Creating new PhoneGap project in dev/speedometer
